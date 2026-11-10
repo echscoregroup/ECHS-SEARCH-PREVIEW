@@ -73,14 +73,19 @@ async function loadSource(){
 }
 function runSearch(term){
  const input=document.getElementById('q');input.value=term;
- const q=clean(term);const tokens=q.split(/\s+/).filter(Boolean);
- // Expand related ECHS terminology so one search finds records using equivalent wording.
- const militaryTerms=['military hospital','military hospitals','service hospital','service hospitals','afms hospital','afms hospitals','mh','mil hosp'];
- const isMilitarySearch=militaryTerms.some(term=>q.includes(clean(term)) || clean(term).includes(q));
- const aliases=tokens.map(t=>t==='elgibilty'?['elgibilty','eligibility']:t==='64kb'?['64kb','64 kb']: [t]);
+ const q=clean(term);const tokens=q.split(/\\s+/).filter(Boolean);
+ // Treat common short forms and typing variations as the same hospital search.
+ const isMilitarySearch =
+   /\\bmil[a-z]*\\s+hosp[a-z]*\\b/.test(q) ||
+   /\\bmily\\s+hosp[a-z]*\\b/.test(q) ||
+   /\\bserv[a-z]*\\s+hosp[a-z]*\\b/.test(q) ||
+   /\\bafms\\s+hosp[a-z]*\\b/.test(q) ||
+   /^(mh|mil|mily|military|service|afms)$/.test(q);
+ const aliases=tokens.map(t=>t==='elgibilty'?['elgibilty','eligibility']:t==='64kb'?['64kb','64 kb']:[t]);
  let matches;
  if(isMilitarySearch){
-  matches=records.filter(r=>militaryTerms.some(term=>r.searchText.includes(clean(term)) || (term==='mh' && /\\bmh\\b/.test(r.searchText))));
+  const hospitalPattern = /\\b(military hospitals?|service hospitals?|afms hospitals?)\\b/;
+  matches=records.filter(r=>hospitalPattern.test(r.searchText) || /\\bmh\\b/.test(r.searchText));
  }else{
   matches=records.filter(r=>aliases.every(group=>group.some(t=>r.searchText.includes(clean(t)))));
  }
