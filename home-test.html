@@ -223,4 +223,24 @@ async function loadPublicNews(){
  }catch(err){host.replaceChildren();const p=document.createElement('p');p.className='intro';p.textContent='Latest news could not be loaded at this time.';host.append(p);console.error('HH public news:',err);}
 }
 loadPublicNews();
-</script><script data-goatcounter="https://helpinghandsforechs.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></body></html>
+</script><script data-goatcounter="https://helpinghandsforechs.goatcounter.com/count" data-goatcounter-settings='{"no_session":true,"path":"/counter-test"}' async src="https://gc.zgo.at/count.js"></script>
+<script>
+(function(){
+  const output=document.getElementById('hh-visitor-counter');
+  if(!output)return;
+  output.textContent='VISITORS 00000';
+  async function refreshTestCount(){
+    try{
+      const response=await fetch('https://helpinghandsforechs.goatcounter.com/counter/%2Fcounter-test.json?x='+Date.now(),{cache:'no-store'});
+      if(!response.ok)throw new Error('Counter not available');
+      const data=await response.json();
+      const digits=String(data.count||'0').replace(/[^0-9]/g,'');
+      output.textContent='VISITORS '+digits.padStart(5,'0');
+    }catch(error){
+      console.warn('Visitor test counter could not be read:',error);
+    }
+  }
+  window.setTimeout(refreshTestCount,12000);
+  window.setTimeout(refreshTestCount,20000);
+})();
+</script></body></html>
