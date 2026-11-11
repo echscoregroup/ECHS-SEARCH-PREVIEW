@@ -34,7 +34,28 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:22px}
 <div id="status" role="status">Loading the current test website content…</div>
 <section id="results" aria-live="polite"></section>
 </main>
-<footer>SEARCH PROTOTYPE ONLY · Reads the content of the isolated preview's copied source content · Does not edit the website</footer>
+<footer>SEARCH PROTOTYPE ONLY · Reads the content of the isolated preview's copied source content · Does not edit the website
+<div id="visitor-thanks" style="margin-top:10px;color:#667586;font-size:11px;line-height:1.4">
+  I THANK THE VISITORS TO MY WEBSITE
+  <div id="visitor-count" style="font-size:13px;font-weight:600;color:#667586;margin-top:2px"></div>
+</div>
+</footer>
+<script data-goatcounter="https://helpinghandsforechs.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+<script>
+(function showVisitorCount(){
+  if (window.goatcounter && typeof window.goatcounter.visit_count === 'function') {
+    window.goatcounter.visit_count({
+      append: '#visitor-count',
+      path: 'TOTAL',
+      no_branding: true,
+      attr: { 'aria-label': 'Website visitor count' },
+      style: 'font-size:13px;color:#667586;font-weight:600'
+    });
+  } else {
+    setTimeout(showVisitorCount, 100);
+  }
+})();
+</script>
 <script>
 const sampleTerms=['echs card','64kb card','demise','referral','emergency','military Hospital','elgibilty'];
 const sampleHost=document.getElementById('samples');
