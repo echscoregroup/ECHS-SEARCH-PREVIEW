@@ -132,8 +132,8 @@ footer{background:var(--navy);color:#fff;padding:25px 5%;display:flex;justify-co
 <footer>
 <strong contenteditable="true">HELPING HANDS FOR ECHS</strong>
 <div class="footer-links">
-<span id="hh-visitor-counter" style="display:inline-block;vertical-align:middle;width:auto;margin:0 8px 0 0;padding:1px 5px;border:1px solid #c6a45a;border-radius:3px;background:#fff;color:#0b1f3a;white-space:nowrap;line-height:1">
-  <span id="hh-visitor-count" style="display:inline-block;font-size:12px;line-height:1.2;color:#0b1f3a;min-height:0"></span>
+<span id="hh-visitor-counter" style="display:inline-flex;align-items:center;vertical-align:middle;width:42px;height:18px;margin:0 8px 0 0;padding:0;border:0;background:transparent;white-space:nowrap;line-height:1">
+  <span id="hh-visitor-count" style="display:inline-block;width:42px;height:18px;line-height:18px"></span>
 </span><a href="https://echs.gov.in" target="_blank" rel="noopener noreferrer">CO ECHS SITE</a><a href="https://www.echsbpa.utiitsl.com/ECHS/HospitalCriteria.jsp" target="_blank" rel="noopener noreferrer">FIND EMPANELLED HOSPITAL</a><button type="button" onclick="openHHModal('hh-contact-modal')">CONTACT ADMIN</button>
 </div></footer>
 <div id="hh-contact-modal" role="dialog" aria-modal="true" aria-labelledby="hh-contact-title" onclick="closeHHModalOnBackdrop(event,'hh-contact-modal')"><div class="hh-modal-card"><button class="hh-modal-close" type="button" aria-label="Close" onclick="closeHHModal('hh-contact-modal')">×</button><h3 id="hh-contact-title">CONTACT ADMIN</h3><a class="hh-modal-phone" href="tel:+919740072879">+91 97400 72879</a><p class="hh-modal-note">Cdr Santhanam (Retd)</p></div></div>
@@ -229,8 +229,8 @@ loadPublicNews();
       append: '#hh-visitor-count',
       path: 'TOTAL',
       no_branding: true,
-      attr: { 'aria-label': 'Website visitor count' },
-      style: 'font-size:12px;color:#0b1f3a;text-align:center'
+      attr: { 'aria-label': 'Website visitor count', width: '42', height: '18' },
+      style: 'div { border:0; background:transparent; padding:0; margin:0; width:42px; height:18px; } #gcvc-for { display:none; } #gcvc-views { color:#c6a45a; font-family:Arial,Helvetica,sans-serif; font-size:13px; font-weight:800; line-height:18px; }'
     });
   } else {
     setTimeout(showHHVisitorCount, 100);
