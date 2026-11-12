@@ -76,10 +76,12 @@ footer{background:var(--navy);color:#fff;padding:25px 5%;display:flex;justify-co
 footer>strong{font-size:13px;line-height:1;white-space:nowrap}
 footer .footer-links #hh-visitor-counter{display:inline-block!important;vertical-align:middle;margin:0 8px 0 0!important;padding:0!important;border:0!important;background:transparent!important;color:var(--gold);font-family:inherit;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1;white-space:nowrap}
 
-/* Centered veterans picture only. Existing site typography, colours and cards are unchanged. */
-.hh-tribute-image-wrap{width:min(460px,92%);height:auto;aspect-ratio:600/286;margin:14px auto 20px;position:relative;overflow:hidden;background:transparent!important}
+/* Jai Hind label beside the compact veterans picture; existing site styles remain unchanged. */
+.hh-tribute-row{width:min(760px,96%);margin:14px auto 20px;display:flex;justify-content:center;align-items:center;gap:28px}
+.hh-jai-hind{flex:0 0 auto;color:var(--navy);font-size:clamp(30px,4vw,48px);font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.hh-tribute-image-wrap{width:min(460px,65%);height:auto;aspect-ratio:600/286;margin:0;position:relative;overflow:hidden;background:transparent!important}
 .hh-tribute-image-wrap img{position:absolute!important;display:block!important;width:200%!important;max-width:none!important;height:auto!important;left:-50%!important;top:50%!important;transform:translateY(-50%)!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;object-fit:initial!important}
-@media(max-width:600px){.hh-tribute-image-wrap{width:min(390px,94%);margin:12px auto 18px}}
+@media(max-width:600px){.hh-tribute-row{gap:10px;width:98%;margin:12px auto 18px}.hh-jai-hind{font-size:clamp(20px,5vw,30px)}.hh-tribute-image-wrap{width:68%}}
 </style>
 </head><body>
 <header class="mast">
@@ -102,8 +104,11 @@ footer .footer-links #hh-visitor-counter{display:inline-block!important;vertical
 <p contenteditable="true">Find ECHS videos, latest news, beneficiary guides and instant help through EBVA.</p>
 <p contenteditable="true">Reliable information, clearly organised to help you take the next step.</p>
 </section>
-<div class="hh-tribute-image-wrap" aria-label="Tribute to India's veterans and three services">
+<div class="hh-tribute-row" aria-label="Jai Hind and tribute to India's veterans and three services">
+<div class="hh-jai-hind">JAI HIND</div>
+<div class="hh-tribute-image-wrap">
 <img src="veterans-tribute.png" alt="Tribute to India's veterans and the Army, Navy and Air Force">
+</div>
 </div>
 <section class="section"><h3 contenteditable="true">FIND ECHS INFORMATION BY SUBJECT</h3><p class="intro" contenteditable="true">Choose the service you need.</p>
 <div class="cards">
