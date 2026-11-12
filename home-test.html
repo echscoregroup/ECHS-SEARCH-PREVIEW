@@ -77,9 +77,9 @@ footer>strong{font-size:13px;line-height:1;white-space:nowrap}
 footer .footer-links #hh-visitor-counter{display:inline-block!important;vertical-align:middle;margin:0 8px 0 0!important;padding:0!important;border:0!important;background:transparent!important;color:var(--gold);font-family:inherit;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1;white-space:nowrap}
 
 /* Veterans tribute replaces the disabled search control; all other homepage content is unchanged. */
-.hh-tribute-image-wrap{width:min(620px,92%);margin:18px auto 24px;display:flex;justify-content:center;align-items:center}
-.hh-tribute-image-wrap img{display:block;width:100%;height:auto;max-height:210px;object-fit:contain}
-@media(max-width:600px){.hh-tribute-image-wrap{width:96%;margin:14px auto 20px}.hh-tribute-image-wrap img{max-height:160px}}
+.hh-tribute-image-wrap{width:min(460px,92%);aspect-ratio:600/286;margin:14px auto 20px;position:relative;overflow:hidden;background:transparent}
+.hh-tribute-image-wrap img{display:block;position:absolute;width:200%;max-width:none;height:auto;left:-50%;top:50%;transform:translateY(-50%);max-height:none;object-fit:initial}
+@media(max-width:600px){.hh-tribute-image-wrap{width:min(390px,94%);margin:12px auto 18px}}
 </style>
 </head><body>
 <header class="mast">
